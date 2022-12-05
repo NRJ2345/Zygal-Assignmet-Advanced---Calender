@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+   <head> 
+     <meta charset="UTF-8" /> 
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+     <style> 
+       div { 
+         width: 10vmax; 
+         height: 10vmax; 
+       } 
+       header, 
+       footer { 
+         display: flex; 
+       } 
+       #a1 { 
+         background-color: red; 
+       } 
+  
+       #a2 { 
+         background-color: yellow; 
+       } 
+  
+       #a3 { 
+         background-color: orange; 
+       } 
+  
+       #a4 { 
+         background-color: green; 
+       } 
+  
+       button { 
+         width: 9.75vmax; 
+         height: 5vmax; 
+         background: #eee; 
+         border: none; 
+       } 
+     </style> 
+   </head> 
+   <body> 
+     <section> 
+       <header> 
+         <div id="a1">1</div> 
+         <div id="a2">2</div> 
+       </header> 
+     </section> 
+     <section> 
+       <button onclick="anty()">Anti-Clockwise</button> 
+       <button onclick="clock()">Clockwise</button> 
+      </section> 
+      <footer> 
+         <div id="a3">4</div> 
+         <div id="a4">3</div> 
+       </footer> 
+     </section> 
+     <script> 
+       const a1 = document.getElementById("a1"); 
+       const a2 = document.getElementById("a2"); 
+       const a4 = document.getElementById("a3"); 
+       const a3 = document.getElementById("a4"); 
+       let i = 0; 
+       let j = 0; 
+       const colors = ["red", "yellow", "orange", "green"]; 
+       function anty() { 
+         i = i + 1; 
+         a1.style.backgroundColor = colors[(i + 1) % 4]; 
+         a2.style.backgroundColor = colors[(i + 2) % 4]; 
+         a3.style.backgroundColor = colors[(i + 3) % 4]; 
+         a4.style.backgroundColor = colors[(i + 4) % 4]; 
+       } 
+       function clock() { 
+         j = j + 1; 
+         a4.style.backgroundColor = colors[(j + 1) % 4]; 
+         a3.style.backgroundColor = colors[(j + 2) % 4]; 
+         a2.style.backgroundColor = colors[(j + 3) % 4]; 
+         a1.style.backgroundColor = colors[(j + 4) % 4]; 
+       } 
+     </script> 
+   </body> 
+ </html>
